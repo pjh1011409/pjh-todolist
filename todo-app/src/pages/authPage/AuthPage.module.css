@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+.fullLayout {
+  background-color: rgb(170, 205, 236);
+  height: 100vh;
+}
+
+.authBoxBg {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authCard {
+  height: auto;
+  width: 25rem;
+}

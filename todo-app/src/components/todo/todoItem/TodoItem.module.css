@@ -1,0 +1,9 @@
+.checked {
+  color: grey;
+  text-decoration-line: line-through;
+}
+
+.unChecked {
+  color: grey;
+  text-decoration-line: none;
+}
