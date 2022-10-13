@@ -1,5 +1,17 @@
-.checkBox {
+.checked {
+  font-size: 20px;
+  color: rgb(51, 51, 192);
+  overflow: hidden;
+  word-wrap: break-word;
+  text-decoration-line: line-through;
+}
+
+.unChecked {
+  font-size: 20px;
   color: rgb(95, 150, 160);
+  overflow: hidden;
+  word-wrap: break-word;
+  text-decoration-line: none;
 }
 
 .changeInput {
@@ -18,7 +30,7 @@
   font-size: 15px;
 }
 
-.trash {
+.pen {
   margin-top: 10px;
   font-size: 20px;
 }

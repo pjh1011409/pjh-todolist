@@ -2,12 +2,13 @@
   text-align: center;
 }
 .toDoInput input {
-  width: 250px;
+  width: 300px;
   height: 40px;
   box-sizing: border-box;
   margin-bottom: 30px;
-  padding: 0 15px;
-  border: 1px solid #dcdcdc;
+  padding: 0 10px;
+  border: 2px solid rgb(95, 150, 160);
+  border-radius: 10px;
   vertical-align: top;
 }
 .toDoInput button {

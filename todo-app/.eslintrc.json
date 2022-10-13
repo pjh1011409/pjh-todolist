@@ -24,7 +24,8 @@
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "object-shorthand": ["error", "always", { "avoidQuotes": true }],
-    "spaced-comment": ["error", "always", { "markers": ["//"] }]
+    "spaced-comment": ["error", "always", { "markers": ["//"] }],
+    "react/jsx-no-useless-fragment": "warn"
   },
   "ignorePatterns": ["build, dist, public, node_modules"]
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import TodoItem from '../todoItem/TodoItem';
 import styles from './TodoList.module.css';
 
-function TodoList({ todos, onDel, onToggle }) {
+function TodoList({ todos, onDel, onFix, onToggle }) {
   return (
     <ul className={styles.TodoList}>
-      {todos.map(data => (
-        <TodoItem key={data.id} todos={data} onDel={onDel} onToggle={onToggle} />
+      {todos.map((data, i) => (
+        <TodoItem key={data.id} idx={i} todos={data} onDel={onDel} onFix={onFix} onToggle={onToggle} />
       ))}
     </ul>
   );

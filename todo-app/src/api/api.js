@@ -2,7 +2,7 @@ const baseUrl = 'https://pre-onboarding-selection-task.shop';
 
 const get = async endpoint => {
   const url = baseUrl + endpoint;
-  const res = await fetch(`https://pre-onboarding-selection-task.shop/${endpoint}`, {
+  const res = await fetch(`${url}${endpoint}`, {
     headers: { Authorization: `${localStorage.getItem('token')}` },
   });
   const result = await res.json();

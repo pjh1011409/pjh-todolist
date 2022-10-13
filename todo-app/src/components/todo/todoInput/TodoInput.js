@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,22 +19,35 @@ function TodoInput({ onAdd }) {
   // if(! text) return는 공백 입력 방지
   // onAdd함수에 매개변수로 사용자가 입력한 text를 담고, setText('')를 사용하여 입력창을 공백으로 만든 후에
   // useRef를 사용하여 포커스를 두게 하였다. textRef는 useRef의 이름이다. 이름=사용자 정의
-  const onSubmit = e => {
-    // 새로고침 방지
-    e.preventDefault();
-    // text에 아무것도 없을 때 - 공백 입력 방지
-    if (!text) return;
+  const onSubmit = useCallback(
+    e => {
+      // 새로고침 방지
+      e.preventDefault();
+      // text에 아무것도 없을 때 - 공백 입력 방지
+      if (!text) return;
 
-    onAdd(text);
+      onAdd(text);
 
-    setText('');
+      setText('');
+    },
+    [text],
+  );
+
+  useEffect(() => {
     textRef.current.focus();
-  };
+  }, []);
   return (
     <form className={styles.toDoInput} onSubmit={onSubmit}>
-      <input type="text" value={text} onChange={changeInput} ref={textRef} />
+      <input
+        maxLength="15"
+        type="text"
+        value={text}
+        placeholder="할일을 입력해주세요 (15자 이내)"
+        onChange={changeInput}
+        ref={textRef}
+      />
       <button type="submit">
-        <FontAwesomeIcon icon={faCirclePlus} size="2x" className={styles.plusIcon} />
+        <FontAwesomeIcon icon={faCirclePlus} size="3x" className={styles.plusIcon} />
       </button>
     </form>
   );
