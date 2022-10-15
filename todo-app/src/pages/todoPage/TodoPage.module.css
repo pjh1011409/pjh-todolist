@@ -13,11 +13,14 @@ body {
   box-shadow: 5px 5px 20px gray;
 }
 
+.header {
+  background: rgb(171, 226, 171);
+  color: rgb(29, 42, 29);
+}
+
 .toDos h1 {
   text-align: center;
   padding: 20px 0;
-  background: rgb(171, 226, 171);
   font-size: 30px;
-  color: rgb(29, 42, 29);
   margin-top: 0;
 }

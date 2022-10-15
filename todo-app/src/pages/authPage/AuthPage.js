@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import styles from './AuthPage.module.css';
 
-import WelcomeBox from '../../components/auth/welcomeBox/WelcomeBox';
-import SignUp from '../../components/auth/signUp/SignUp';
-import LogIn from '../../components/auth/login/LogIn';
+import { WelcomeBox, SignUp, SignIn } from '../../components/auth';
 
 function AuthPage() {
   const [sign, setSign] = useState(false);
@@ -17,7 +15,7 @@ function AuthPage() {
       <div className={styles.authBoxBg}>
         <div className={styles.authCard}>
           <WelcomeBox signHandler={signHandler} sign={sign} />
-          {sign === false ? <LogIn /> : <SignUp />}
+          {sign === false ? <SignIn /> : <SignUp />}
         </div>
       </div>
     </div>

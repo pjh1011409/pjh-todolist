@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import styles from './SignUp.module.css';
+import styles from './SignIn.module.css';
 
-function SignUp() {
+function SignIn() {
   const navigate = useNavigate();
 
   const [inputValue, setInputValue] = useState({
@@ -11,7 +11,6 @@ function SignUp() {
     password: '',
   });
   const { email, password } = inputValue;
-
   const handleInput = event => {
     const { name, value } = event.target;
     setInputValue({
@@ -30,27 +29,34 @@ function SignUp() {
     e.preventDefault();
   };
 
-  // 회원가입 API
-  const signUpSubmit = async () => {
-    const data = { email, password };
-
+  // 로그인 API
+  async function signInSubmit() {
+    const data = {
+      email,
+      password,
+    };
     try {
-      const response = await axios.post('/api/auth/signup', data, {
+      const response = await axios.post('/api/auth/signin', data, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
-      if (response.status === 201) {
+      if (response.data.access_token) {
         localStorage.setItem('access_token', response.data.access_token);
-        alert('회원가입이 완료되었습니다.');
+      }
+      if (response.status === 200) {
         navigate('/todo', { replace: true });
       }
     } catch (error) {
       console.error(error);
-      alert('이미 존재하는 계정입니다.');
+      alert('존재하지 않는 계정입니다. 회원가입을 진행해주세요.');
     }
-  };
+  }
+
+  // async function signInSubmit() {
+  //   Api.signInApi(email, password);
+  // }
 
   // 로컬스토리지에 token이 존재시 /todo로 이동
   useEffect(() => {
@@ -60,9 +66,9 @@ function SignUp() {
   }, [navigate]);
 
   return (
-    <div className={styles.signUp}>
-      <div className={styles.signUpInner}>
-        <h2>Sign Up</h2>
+    <div className={styles.signIn}>
+      <div className={styles.signInInner}>
+        <h2>Login In</h2>
         <form onSubmit={onSubmit}>
           {!isValidEmail && <div className={styles.warning}>ID는 3자 이상, @를 포함</div>}
 
@@ -82,14 +88,15 @@ function SignUp() {
             onChange={handleInput}
             placeholder="Enter Password"
           />
+
           <button
-            className={styles.signUpBtn}
+            className={styles.signInBtn}
             type="submit"
             value="Sign In"
-            onClick={signUpSubmit}
+            onClick={signInSubmit}
             disabled={!getIsActive}
           >
-            ⭐️ Create User Account
+            Log In
           </button>
         </form>
       </div>
@@ -97,4 +104,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;

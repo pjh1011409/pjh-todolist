@@ -1,50 +1,79 @@
-const baseUrl = 'https://pre-onboarding-selection-task.shop';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const get = async endpoint => {
-  const url = baseUrl + endpoint;
-  const res = await fetch(`${url}${endpoint}`, {
-    headers: { Authorization: `${localStorage.getItem('token')}` },
-  });
-  const result = await res.json();
-  return result;
-};
+// const navigate = useNavigate();
 
-const post = async (endpoint, data) => {
-  const url = baseUrl + endpoint;
-  const res = await fetch(url, {
-    method: 'POST',
+const signUpApi = async (email, password) => {
+  const data = {
+    email,
+    password,
+  };
+  const response = await axios.post('/api/auth/signup', data, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `${localStorage.getItem('token')}`,
     },
-    body: JSON.stringify(data),
   });
-  const result = await res.json();
-  return result;
+
+  return response;
 };
 
-const put = async (endpoint, data) => {
-  const url = baseUrl + endpoint;
-  const res = await fetch(url, {
-    method: 'PUT',
+const signInApi = async (email, password) => {
+  const data = {
+    email,
+    password,
+  };
+  const response = await axios.post('/api/auth/signin', data, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `${localStorage.getItem('token')}`,
     },
-    body: JSON.stringify(data),
   });
-  const result = await res.json();
-  return result;
+
+  return response;
 };
 
-const del = async endpoint => {
-  const url = baseUrl + endpoint;
-  const res = await fetch(url, {
-    method: 'DELETE',
-    headers: { Authorization: `${localStorage.getItem('token')}` },
+const getApi = async () => {
+  const response = await axios.get('/api/todos', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+    },
   });
-  const result = await res.json();
-  return result;
+  return response;
 };
 
-export { get, post, put, del as delete };
+const postApi = async text => {
+  const data = JSON.stringify({
+    todo: text,
+  });
+  const response = await axios.post('/api/todos', data, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.access_token}`,
+    },
+  });
+  return response;
+};
+
+const putApi = async (id, status, newTodo) => {
+  const data = JSON.stringify({
+    todo: newTodo,
+    isCompleted: status,
+  });
+  const response = await axios.delete(`/api/todos/${id}`, data, {
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${localStorage.access_token}`,
+    },
+  });
+  return response;
+};
+
+const delApi = async id => {
+  const response = await axios.delete(`/api/todos/${id}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.access_token}`,
+    },
+  });
+  return response;
+};
+
+export { getApi, postApi, putApi, delApi, signUpApi, signInApi };

@@ -13,11 +13,11 @@ function WelcomeBox({ signHandler, sign }) {
             alt="환영합니다(이미지없음)"
           />
         </h1>
-        <p>Register to use this site &#39;s ToDo List</p>
-        {!sign && <h4>👇 Please sign up to log in</h4>}
+
+        {!sign ? <h4>👇 Go To SignUp </h4> : <h4>👇 Go To logIn</h4>}
 
         <button type="button" onClick={signHandler} className={styles.signUpBtn}>
-          {sign === true ? 'login' : 'SignUp'}
+          {sign === true ? '로그인' : '회원가입'}
         </button>
       </div>
     </div>

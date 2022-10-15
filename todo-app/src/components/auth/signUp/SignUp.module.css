@@ -28,9 +28,16 @@
 .password {
   border-radius: 5px;
   display: flex;
-  margin: 20px auto;
+  margin: auto;
+  margin-bottom: 20px;
   width: 80%;
   height: 40px;
+}
+
+.warning {
+  color: red;
+  font-size: 12px;
+  width: 50%;
 }
 
 .signUpBtn {
@@ -45,4 +52,13 @@
 .signUpBtn:hover {
   border: 1px solid;
   background-color: white;
+}
+
+.signUpBtn:disabled {
+  margin-top: 30px;
+  width: 60%;
+  height: 50px;
+  border-radius: 20px;
+  font-weight: bolder;
+  background-color: rgb(213, 209, 209);
 }

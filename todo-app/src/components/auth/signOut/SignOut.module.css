@@ -1,0 +1,10 @@
+.logoutBtn {
+  background: rgb(171, 226, 171);
+  color: rgb(29, 42, 29);
+  font-size: 17px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+  float: right;
+}

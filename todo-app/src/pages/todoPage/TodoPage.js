@@ -1,75 +1,92 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { TodoInput, TodoList } from '../../components/todo';
 import styles from './TodoPage.module.css';
-
-import TodoInput from '../../components/todo/todoInput/TodoInput';
-import TodoList from '../../components/todo/todoList/TodoList';
-
 import * as Api from '../../api/api';
+import { SignOut } from '../../components/auth';
 
 function ToDoPage() {
-  const no = useRef(0);
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem('access_token');
+  const [todos, setTodos] = useState([{ id: 0, todo: '', isCompleted: false, userId: 0 }]);
 
-  const [todos, setTodos] = useState([]);
-  // text를 매개변수로 받는다. -> TodoList.js에서 text를 매개변수로 받아서 실행되는 함수
-  // ... todos, : todos라는 데이터를 가져오고 값을 추가해주고, no.current++로 숫자를 1씩 증가시켜준다.
-  // text : 의 text는 매개변수로 들어온 text / done의 기본값을 false(거짓)으로 지정
-
-  const onAdd = useCallback(
-    text => {
-      const todo = {
-        id: (no.current += 1),
-        text,
-        done: false,
-      };
-      setTodos(todos.concat(todo));
-    },
-    [todos],
-  );
-
-  //   TodoItem.js에서 전달받은 id(매개변수)로 filter기능을 사용하여 id와 일치하지 않는 데이터만 data에 담게 해 줌
-  // 쉽게 말하자면 지정된 id값의 data만 삭제하는 것
-  const onDel = id => {
-    setTodos(todos.filter(todo => todo.id !== id));
+  // todo 데이터 생성
+  const createData = async text => {
+    Api.postApi(text).then(res => {
+      setTodos(prev => [...prev, res.data]);
+    });
   };
 
-  const onFix = (changeIdx, newTodo) => {
-    const newList = todos.map((data, i) => ({ ...data, text: data.id === changeIdx ? newTodo : data }));
-    setTodos(newList);
+  // todo 데이터 불러오기
+  const readData = async () => {
+    Api.getApi().then(res => {
+      setTodos(res.data);
+    });
   };
 
-  // Todoitem.js에서 id를 매개변수로 받아 id와 일치하는 데이터를 수정하는 함수
+  // todo 데이터 수정
+  const updateData = async (id, status, newTodo) => {
+    const data = JSON.stringify({
+      todo: newTodo,
+      isCompleted: status,
+    });
+
+    await axios.put(`/api/todos/${id}`, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.access_token}`,
+      },
+    });
+
+    setTodos(
+      todos.map(item => {
+        return item.id === id ? { ...item, ...{ isCompleted: status }, ...{ todo: newTodo } } : item;
+      }),
+    );
+  };
+
+  // todo 데이터 삭제
+  const deleteData = async id => {
+    Api.delApi(id).then(
+      setTodos(
+        todos.filter(todo => {
+          return todo.id !== id;
+        }),
+      ),
+    );
+  };
+
+  // todo 데이터 완료유무 check
   const onToggle = id => {
     setTodos(
       todos.map(todo =>
         todo.id === id
           ? {
               ...todo,
-              done: !todo.done,
+              isCompleted: !todo.isCompleted,
             }
           : todo,
       ),
     );
   };
 
-  const url = 'api/todos';
   useEffect(() => {
-    fetch(url, {
-      headers: { Authorization: `${localStorage.getItem('token')}` },
-    })
-      .then(response => {
-        const result = response.json();
-
-        setTodos(result);
-      })
-      .catch(e => console.log('e', e));
-  }, []);
+    if (!accessToken) {
+      navigate('/', { replace: true });
+    }
+    readData();
+  }, [accessToken, navigate]);
 
   return (
     <div className={styles.toDos}>
-      <h1>Todo List</h1>
-      <TodoInput onAdd={onAdd} />
-      <TodoList todos={todos} onDel={onDel} onFix={onFix} onToggle={onToggle} />
+      <div className={styles.header}>
+        <SignOut />
+        <h1>Todo List</h1>
+      </div>
+
+      <TodoInput createData={createData} />
+      <TodoList todos={todos} updateData={updateData} deleteData={deleteData} onToggle={onToggle} />
     </div>
   );
 }

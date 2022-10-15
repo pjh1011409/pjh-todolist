@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AuthPage from './pages/authPage/AuthPage';
-import TodoPage from './pages/todoPage/TodoPage';
+import { AuthPage, TodoPage } from './pages';
 
 function App() {
   return (

@@ -1,16 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faPenToSquare, faX } from '@fortawesome/free-solid-svg-icons';
-import * as Api from '../../../api/api';
-
 import styles from './TodoEdit.module.css';
 
-function TodoEdit({ todos, idx, onFix, onToggle }) {
-  const { id, text, done } = todos;
+function TodoEdit({ todos, check, setCheck, updateData, onToggle }) {
+  const { id, todo, isCompleted } = todos;
 
-  const [status, setStatus] = useState(false);
-  const [newTodo, setNewTodo] = useState(todos.text);
-  const [prevTodo, setPrevTodo] = useState(todos.text);
+  const [status, setStatus] = useState(false); // 수정입력창 실행 유무
+
+  const [prevTodo, setPrevTodo] = useState(todo); // 수정 이전 데이터
+  const [newTodo, setNewTodo] = useState(todo); // 수정 이후 데이터
   const editInputRef = useRef(null);
 
   const textChange = () => {
@@ -19,8 +18,8 @@ function TodoEdit({ todos, idx, onFix, onToggle }) {
 
   const changeDone = () => {
     if (!newTodo) return;
-    onFix(idx, newTodo);
     setStatus(false);
+    updateData(id, check, newTodo);
     setPrevTodo(newTodo);
   };
   const changeCancel = () => {
@@ -28,18 +27,13 @@ function TodoEdit({ todos, idx, onFix, onToggle }) {
     setStatus(false);
   };
 
-  //   const updateApi = async dataToSubmit => {
-  //     const { content, id } = dataToSubmit;
-  //     const data = content;
-  //     return Api.put(`/todos/${id}`, data);
-  //   };
-
   useEffect(() => {
-    // edit 모드일때 포커싱을 한다.
+    setCheck(isCompleted);
     if (status) {
-      editInputRef.current.focus();
+      editInputRef.current.focus(); // edit 모드일때 포커싱을 한다.
     }
-  }, [status]);
+  }, [status, isCompleted]);
+
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
@@ -63,14 +57,28 @@ function TodoEdit({ todos, idx, onFix, onToggle }) {
         </>
       ) : (
         <>
-          {done === true ? (
+          {isCompleted === true ? (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-            <em className={styles.checked} onClick={() => onToggle(id)} role="button" tabIndex={0}>
+            <em
+              className={styles.checked}
+              onClick={() => {
+                onToggle(id);
+              }}
+              role="button"
+              tabIndex={0}
+            >
               {newTodo}
             </em>
           ) : (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-            <em className={styles.unChecked} onClick={() => onToggle(id)} role="button" tabIndex={0}>
+            <em
+              className={styles.unChecked}
+              onClick={() => {
+                onToggle(id);
+              }}
+              role="button"
+              tabIndex={0}
+            >
               {newTodo}
             </em>
           )}
