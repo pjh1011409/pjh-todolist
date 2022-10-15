@@ -84,7 +84,7 @@ function SignUp() {
           />
           <button
             className={styles.signUpBtn}
-            type="submit"
+            type="button"
             value="Sign In"
             onClick={signUpSubmit}
             disabled={!getIsActive}

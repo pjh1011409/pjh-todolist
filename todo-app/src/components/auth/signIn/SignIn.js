@@ -91,7 +91,7 @@ function SignIn() {
 
           <button
             className={styles.signInBtn}
-            type="submit"
+            type="button"
             value="Sign In"
             onClick={signInSubmit}
             disabled={!getIsActive}
