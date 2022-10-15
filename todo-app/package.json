@@ -63,5 +63,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-prefer-function-component": "^3.0.0",
     "gh-pages": "^4.0.0"
-  }
+  },
+  "proxy": "https://pre-onboarding-selection-task.shop/"
 }

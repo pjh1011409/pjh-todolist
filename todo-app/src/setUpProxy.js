@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = app => {
   app.use(
     createProxyMiddleware('/api', {
-      target: 'https://pre-onboarding-selection-task.shop/',
+      target: process.env.REACT_APP_API_KEY,
       changeOrigin: true,
       ws: true,
       pathRewrite: {
