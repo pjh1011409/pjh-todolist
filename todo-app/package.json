@@ -34,7 +34,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://pjh1011409.github.io/wanted-pre-onboarding-frontend",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -63,6 +62,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-prefer-function-component": "^3.0.0",
     "gh-pages": "^4.0.0"
-  },
-  "proxy": "https://pre-onboarding-selection-task.shop/"
+  }
 }
