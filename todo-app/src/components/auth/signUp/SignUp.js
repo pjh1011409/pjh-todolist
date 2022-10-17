@@ -35,7 +35,7 @@ function SignUp() {
     const data = { email, password };
 
     try {
-      const response = await axios.post('/api/auth/signup', data, {
+      const response = await axios.post('https://pre-onboarding-selection-task.shop/auth/signup', data, {
         headers: {
           'Content-Type': 'application/json',
         },
