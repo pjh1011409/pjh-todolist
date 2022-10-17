@@ -36,7 +36,7 @@ function SignIn() {
       password,
     };
     try {
-      const response = await axios.post('https://pre-onboarding-selection-task.shop/auth/signin', data, {
+      const response = await axios.post('/api/auth/signin', data, {
         headers: {
           'Content-Type': 'application/json',
         },
