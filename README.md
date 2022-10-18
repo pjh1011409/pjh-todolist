@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 프론트엔드 코스 사전과제
 
-[ Main Function ](#main-function)
+[Main Function](#main-function)
 
 </br>
 </br>
