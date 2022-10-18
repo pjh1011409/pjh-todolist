@@ -19,6 +19,8 @@
 
 ## Main Function
 
+assignment에 대한 조건에 따른 회원가입,로그인,todoApp에 대한 주요 기능들을 블로그에 정리하였습니다.
+
 > 📎 상세내용 : [TodoList App - 회원가입, 로그인/아웃](https://velog.io/@pjh1011409/todoList-App-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 
 
