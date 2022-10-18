@@ -1,10 +1,6 @@
 # 원티드 프리온보딩 프론트엔드 코스 사전과제
 
 
-1. [깨끗한 코드](#-main-function)
-2. [의미 있는 이름](#2장.-의미-있는-이름)
-
-
 </br>
 </br>
 
@@ -13,12 +9,13 @@
 
 </br>
 
-## 💻 Service Architecture
+## 🌐 Service Architecture
+
+<img width="800" alt="service architecture" src="https://user-images.githubusercontent.com/81337674/196389079-a76998d7-3789-433e-8421-6011152691f2.png">
 
 
 
-
-## 🔧 Project Structure
+## 💻 Project Structure
 
 
 ```
@@ -32,7 +29,7 @@
 │        ├── 📄 todoPage.js    
 │        └── 📄 todoPage.module.css  
 │   
-├── 🗂 api ── app.js
+├── 🗂 api ── api.js
 │   
 ├── 🗂 components 
 │   ├── 🗂 auth
@@ -49,7 +46,7 @@
 │   │            ├── 📄 WelcomeBox.js
 │   │            └── 📄 WelcomeBox.module.css
 │   │ 
-│   └── 🗂 auth
+│   └── 🗂 todo
 │         ├── 🗂 todoEdit
 │         │     ├── 📄 TodoEdit.js
 │         │     └── 📄 TodoEdit.module.css    
@@ -69,7 +66,7 @@
 
 
 
-## Main Function
+## ☘️ Main Function
 
 
 ## 🛠 Tools
@@ -98,7 +95,7 @@
 
 
 
-## Convention
+## 💡 Convention
 
 ###  ✏️ ESLint & Prettier
 
@@ -106,6 +103,7 @@
 
 <details>
 <summary>👉  .prettierrc </summary>
+    
 ```
 {
   "singleQuote": true,     //  쌍따옴표가 아닌 홑따옴표를 사용
@@ -118,6 +116,7 @@
   "endOfLine": "auto"      // 파일의 마지막에는 EOL을 보장
   }
 ```
+    
 </details>
 
 
@@ -165,36 +164,11 @@
 
 ###  ✏️ barrel structure & 절대 경로
 
-#### barrel structure
-
-- 각각의 폴더에 index.js를 만들어서 depth를 얕게 만들어주기!!
 
 
-```
-<auth/index.js>
+- 각각의 폴더에 index.js를 만들어서 depth를 얕게 만들어주기 
+- jsconfig.json에 baseUrl을 src로 설정
 
-export { default as SignIn } from './signIn/SignIn';
-export { default as SignUp } from './signUp/SignUp';
-export { default as SignOut } from './signOut/SignOut';
-export { default as WelcomeBox } from './welcomeBox/WelcomeBox';
-```
-
-#### 절대경로
-- ../ 무한지옥 벗어나기!!
-
-
-```
-<jsconfig.json>
-
-{
-  "compilerOptions": {
-    "baseUrl": "src"
-  }
-}
-
-```
-
-#### Example
 ```
 <authpage.js>
 
