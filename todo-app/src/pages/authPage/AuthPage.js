@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
+import { WelcomeBox, SignUp, SignIn } from 'components/auth';
 import styles from './AuthPage.module.css';
-
-import { WelcomeBox, SignUp, SignIn } from '../../components/auth';
 
 function AuthPage() {
   const [sign, setSign] = useState(false);

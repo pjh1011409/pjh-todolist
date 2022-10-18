@@ -3,34 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const baseURL = 'https://pre-onboarding-selection-task.shop';
 
-const signUpApi = async (email, password) => {
-  const data = {
-    email,
-    password,
-  };
-  const response = await axios.post(`${baseURL}/auth/signup`, data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  return response;
-};
-
-const signInApi = async (email, password) => {
-  const data = {
-    email,
-    password,
-  };
-  const response = await axios.post(`${baseURL}/auth/signin`, data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  return response;
-};
-
 const getApi = async () => {
   const response = await axios.get(`${baseURL}/todos`, {
     headers: {
@@ -76,4 +48,4 @@ const delApi = async id => {
   return response;
 };
 
-export { getApi, postApi, putApi, delApi, signUpApi, signInApi };
+export { getApi, postApi, putApi, delApi };
