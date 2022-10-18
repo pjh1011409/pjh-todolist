@@ -1,22 +1,29 @@
 # 원티드 프리온보딩 프론트엔드 코스 사전과제
 
-[Main Function](#main-function)
+## 🌈 목차
+1. [Main Function](#main-function)
+2. [Deploy Link](#deploy-link)
+3. [Service Architecture](#service-architecture)
+4. [Proejct Structure](#project-structure)
+5. [Tools](#tools)
+6. [Convention](#convention)
+7. [회고](#)
 
 </br>
 </br>
 
-## 📎 Project Deploy Link
+## Deploy Link
 - Project homepage: https://pjh1011409.github.io/wanted-pre-onboarding-frontend/
 
 </br>
 
-## 🌐 Service Architecture
+## Service Architecture
 
 <img width="800" alt="service architecture" src="https://user-images.githubusercontent.com/81337674/196389079-a76998d7-3789-433e-8421-6011152691f2.png">
 
 
 
-## 💻 Project Structure
+## Project Structure
 
 
 ```
@@ -44,8 +51,8 @@
 │   │     │     ├── 📄 SignUp.js
 │   │     │     └── 📄 SignUp.module.css
 │   │     └── 🗂 welcomeBox
-│   │            ├── 📄 WelcomeBox.js
-│   │            └── 📄 WelcomeBox.module.css
+│   │           ├── 📄 WelcomeBox.js
+│   │           └── 📄 WelcomeBox.module.css
 │   │ 
 │   └── 🗂 todo
 │         ├── 🗂 todoEdit
@@ -57,7 +64,7 @@
 │         ├── 🗂 todoItem
 │         │     ├── 📄 TodoItem.js
 │         │     └── 📄 TodoItem.module.css
-│         ├── 🗂 todoList
+│         └── 🗂 todoList
 │               ├── 📄 TodoList.js
 │               └── 📄 TodoList.module.css
 ├──  📄  App.js
@@ -66,10 +73,10 @@
 ```
 
 
-## ☘️Main Function
+## Main Function
 
 
-## 🛠 Tools
+## Tools
 
 
 <p>
@@ -95,9 +102,9 @@
 
 
 
-## 💡 Convention
+## Convention
 
-###  ✏️ ESLint & Prettier
+### ESLint & Prettier
 
 #### Prettier
 
@@ -184,5 +191,5 @@ import { WelcomeBox, SignUp, SignIn } from 'components/auth';
 
 
  
-# 🔥 Issue & TroubleShooting
+# 회고
 
