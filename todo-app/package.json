@@ -34,6 +34,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://pjh1011409.github.io/wanted-pre-onboarding-frontend/",
   "eslintConfig": {
     "extends": [
       "react-app",
