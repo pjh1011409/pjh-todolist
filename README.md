@@ -5,12 +5,11 @@
 1. [Deploy Link](#deploy-link)
 2. [Main Function](#main-function)
 3. [Service Architecture](#service-architecture)
-4. [Proejct Structure](#project-structure)
+4. [Project Structure](#project-structure)
 5. [Tools](#tools)
 6. [Convention](#convention)
 7. [회고](#회고)
 
-</br>
 </br>
 
 ## Deploy Link
@@ -115,7 +114,7 @@
 
 ## Convention
 
-### ESLint & Prettier
+### ✏️ ESLint & Prettier
 
 #### Prettier
 
@@ -200,7 +199,7 @@ import { WelcomeBox, SignUp, SignIn } from 'components/auth';
 ```
   
 
-
- 
 # 회고
+
+
 
