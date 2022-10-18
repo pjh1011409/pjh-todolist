@@ -15,6 +15,9 @@
 ## Deploy Link
 - Project homepage: https://pjh1011409.github.io/wanted-pre-onboarding-frontend/
 
+<예시></br>
+Email: 1234@test</br>
+Password: 1234qwer</br>
 </br>
 
 ## Main Function
