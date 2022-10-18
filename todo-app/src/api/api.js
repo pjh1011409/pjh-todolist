@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-// const navigate = useNavigate();
+const baseURL = 'https://pre-onboarding-selection-task.shop';
 
 const signUpApi = async (email, password) => {
   const data = {
     email,
     password,
   };
-  const response = await axios.post('/api/auth/signup', data, {
+  const response = await axios.post(`${baseURL}/auth/signup`, data, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -22,7 +22,7 @@ const signInApi = async (email, password) => {
     email,
     password,
   };
-  const response = await axios.post('/api/auth/signin', data, {
+  const response = await axios.post(`${baseURL}/auth/signin`, data, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -32,7 +32,7 @@ const signInApi = async (email, password) => {
 };
 
 const getApi = async () => {
-  const response = await axios.get('/api/todos', {
+  const response = await axios.get(`${baseURL}/todos`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('access_token')}`,
     },
@@ -44,7 +44,7 @@ const postApi = async text => {
   const data = JSON.stringify({
     todo: text,
   });
-  const response = await axios.post('/api/todos', data, {
+  const response = await axios.post(`${baseURL}/todos`, data, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.access_token}`,
@@ -58,7 +58,7 @@ const putApi = async (id, status, newTodo) => {
     todo: newTodo,
     isCompleted: status,
   });
-  const response = await axios.delete(`/api/todos/${id}`, data, {
+  const response = await axios.delete(`${baseURL}/api/todos/${id}`, data, {
     headers: {
       'Content-type': 'application/json',
       Authorization: `Bearer ${localStorage.access_token}`,
@@ -68,7 +68,7 @@ const putApi = async (id, status, newTodo) => {
 };
 
 const delApi = async id => {
-  const response = await axios.delete(`/api/todos/${id}`, {
+  const response = await axios.delete(`${baseURL}/api/todos/${id}`, {
     headers: {
       Authorization: `Bearer ${localStorage.access_token}`,
     },

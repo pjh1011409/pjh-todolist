@@ -5,6 +5,7 @@ import styles from './SignIn.module.css';
 
 function SignIn() {
   const navigate = useNavigate();
+  const baseURL = 'https://pre-onboarding-selection-task.shop';
 
   const [inputValue, setInputValue] = useState({
     email: '',
@@ -36,7 +37,7 @@ function SignIn() {
       password,
     };
     try {
-      const response = await axios.post('/api/auth/signin', data, {
+      const response = await axios.post(`${baseURL}/auth/signin`, data, {
         headers: {
           'Content-Type': 'application/json',
         },
