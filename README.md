@@ -1,13 +1,14 @@
 # 원티드 프리온보딩 프론트엔드 코스 사전과제
 
 ## 🌈 목차
-1. [Main Function](#main-function)
-2. [Deploy Link](#deploy-link)
+
+1. [Deploy Link](#deploy-link)
+2. [Main Function](#main-function)
 3. [Service Architecture](#service-architecture)
 4. [Proejct Structure](#project-structure)
 5. [Tools](#tools)
 6. [Convention](#convention)
-7. [회고](#)
+7. [회고](#회고)
 
 </br>
 </br>
@@ -16,6 +17,17 @@
 - Project homepage: https://pjh1011409.github.io/wanted-pre-onboarding-frontend/
 
 </br>
+
+## Main Function
+
+> 📎 상세내용 : [TodoList App - 회원가입, 로그인/아웃](https://velog.io/@pjh1011409/todoList-App-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%EB%A1%9C%EA%B7%B8%EC%9D%B8)
+
+
+
+> 📎 상세내용 : [todoList App - CRUD](https://velog.io/@pjh1011409/todoList-App-CRUD)
+
+</br>
+
 
 ## Service Architecture
 
@@ -72,14 +84,6 @@
 
 ```
 
-
-## Main Function
-
-> 📎 상세내용 : [TodoList App - 회원가입, 로그인/아웃](https://velog.io/@pjh1011409/todoList-App-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%EB%A1%9C%EA%B7%B8%EC%9D%B8)
-
-
-
-> 📎 상세내용 : [todoList App - CRUD](https://velog.io/@pjh1011409/todoList-App-CRUD)
 
 
 
