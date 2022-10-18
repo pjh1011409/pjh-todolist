@@ -201,5 +201,23 @@ import { WelcomeBox, SignUp, SignIn } from 'components/auth';
 
 # 회고
 
+### 1️⃣ React 환경변수 사용하여 API key 숨기기
 
+> 일반적으로 유출을 막기위하여 자신이 생성한 Api Key는 숨기는 것이 좋다. 특히 발급 받은 API Key일 경우 숨겨야 한다. 😉</br>
+따라서, env파일에 해당 Api Key를 작성하고 env파일을 gitignore을 해주었다. </br>그리고 process.env.REACT_APP_이름 과 같은 변수명을 사용해서 넣어줄 수 있다.</br></br>
+하지만, 나는 gh-pages로 정적으로 배포를 하였다. 따라서 프론트엔드파일에 Api Key를 노출시켰다. 🥺 </br>
+netlify, vercel, AWS을 통한 Deploy도 고려해보았지만, 항상 배포 전단계까지의 단계만 밟아봤던 나는 배포과정을 익히는 것이 절실하다. 😭</br>
+코스의 커리큘럼에 있는 "지속적인 통합과 배포" 수업을 너무나도 들어보고 싶은 마음!!!!
+
+### 2️⃣ axiosInstance 설정
+
+> customAxios를 작성해본 경험이 있어서 이번 사전과제에서도 적용을 해볼까라는 생각이 있었지만, 본질적(?)으로 간단하게 작성이 가능하여 생략한 부분인데 앞으로 작성하는 습관을 들여야겠다.
+
+### 3️⃣ TypeScript 사용
+
+> 내가 가장 이 코스를 수강하고 싶은 이유 중 하나! TypeScript는 어느 Job Description을 보아도 나오는 조건 중 하나이고 정말로 배우고 싶은 기술이다. 이번 기회에 확실하게 내걸로 만들고 싶은 마음 뿐 😭
+
+### 4️⃣ Client Side Rendering을 이겨내자 
+
+> CRA로 작성한 프로젝트인큼 늘 따라다니는 고민은 SSR과 다른 CSR만의 단점(?)들이다. 이전에 진행했던 프로젝트에서도 CORS 등 여러부분으로 애먹었던 기억이... 그리고 Next.js를 배워보고 싶은건 당연한 마음 뿐 😛 
 
