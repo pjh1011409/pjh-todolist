@@ -82,7 +82,7 @@ function ToDoPage() {
     <div className={styles.toDos}>
       <div className={styles.header}>
         <SignOut />
-        <h1>Todo List</h1>
+        <h1>Todo List!</h1>
       </div>
 
       <TodoInput createData={createData} />
