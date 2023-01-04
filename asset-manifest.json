@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/wanted-pre-onboarding-frontend/static/css/main.d70ffcdd.css",
-    "main.js": "/wanted-pre-onboarding-frontend/static/js/main.3adaf684.js",
-    "static/js/787.2843ca88.chunk.js": "/wanted-pre-onboarding-frontend/static/js/787.2843ca88.chunk.js",
-    "index.html": "/wanted-pre-onboarding-frontend/index.html",
-    "main.d70ffcdd.css.map": "/wanted-pre-onboarding-frontend/static/css/main.d70ffcdd.css.map",
-    "main.3adaf684.js.map": "/wanted-pre-onboarding-frontend/static/js/main.3adaf684.js.map",
-    "787.2843ca88.chunk.js.map": "/wanted-pre-onboarding-frontend/static/js/787.2843ca88.chunk.js.map"
+    "main.css": "/pjh-todolist/static/css/main.d70ffcdd.css",
+    "main.js": "/pjh-todolist/static/js/main.95711752.js",
+    "static/js/787.2843ca88.chunk.js": "/pjh-todolist/static/js/787.2843ca88.chunk.js",
+    "index.html": "/pjh-todolist/index.html",
+    "main.d70ffcdd.css.map": "/pjh-todolist/static/css/main.d70ffcdd.css.map",
+    "main.95711752.js.map": "/pjh-todolist/static/js/main.95711752.js.map",
+    "787.2843ca88.chunk.js.map": "/pjh-todolist/static/js/787.2843ca88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d70ffcdd.css",
-    "static/js/main.3adaf684.js"
+    "static/js/main.95711752.js"
   ]
 }
