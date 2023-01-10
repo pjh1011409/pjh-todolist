@@ -13,7 +13,11 @@
 </br>
 
 ## Deploy Link
-- Project homepage: https://pjh1011409.github.io/wanted-pre-onboarding-frontend/
+
+**HomePage** 👉 https://pjh1011409.github.io/pjh-todolist/
+<br>
+</br>
+**Notion** 👉 [Notion Portfolio](https://www.notion.so/TodoList-App-f76c490b1489464596970e70a67dbb2c)
 
 <예시></br>
 Email: 1234@test</br>
